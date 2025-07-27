@@ -1,3 +1,20 @@
+// Render tools marquee
+const marquee = document.getElementById('tools-marquee');
+function renderLogos() {
+  const logos = [...tools, ...tools]; // Duplicate for infinite scroll
+  logos.forEach(tool => {
+    const img = document.createElement('img');
+    img.src = tool.src;
+    img.alt = tool.alt;
+    img.className = 'h-16 mr-16 object-contain';
+    marquee.appendChild(img);
+  });
+}
+renderLogos();
+
+// Pause on hover
+marquee.addEventListener('mouseenter', () => marquee.style.animationPlayState = 'paused');
+marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
 
 // Render project cards
 const container = document.getElementById('projectsContainer');

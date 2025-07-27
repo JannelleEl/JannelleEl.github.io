@@ -1,3 +1,13 @@
+const tools = [
+	{ src: "assets/images/logos/autocad.svg", alt: "AutoCAD" },
+	{ src: "assets/images/logos/revit.png", alt: "Revit" },
+	{ src: "assets/images/logos/enscape.svg", alt: "Enscape" },
+	{ src: "assets/images/logos/sketchup.png", alt: "SketchUp" },
+	{ src: "assets/images/logos/lumion.png", alt: "Lumion" },
+	{ src: "assets/images/logos/photoshop.png", alt: "Photoshop" },
+	{ src: "assets/images/logos/canva.svg", alt: "Canva" }
+];
+
 const projects = [
   {
     title: "Proposed Lanai - Lincoln Heights",
