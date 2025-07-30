@@ -29,8 +29,8 @@ Promise.all([
   // Loop each project in JSON
   projects.forEach(project => {
     const folder = project.images_folder;
-    const folderImages = folder && projectImages[folder] ? projectImages[folder] : [];
-    const thumbnail = folderImages[0] || 'assets/images/image-slash.svg';
+    const folderImages = folder && projectImages[folder] ? projectImages[folder] : ['assets/images/placeholder.svg'];
+    const thumbnail = folderImages[0] || 'assets/images/placeholder.svg';
 
     // Create project card
     const card = document.createElement('div');
