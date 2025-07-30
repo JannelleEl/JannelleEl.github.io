@@ -47,6 +47,7 @@ Promise.all([
     `;
     container.appendChild(card);
   });
+  attachModalListeners();
 });
 
 
@@ -83,7 +84,6 @@ function attachModalListeners() {
   });
 }
 
-attachModalListeners();
 closeModal.addEventListener('click', hideModal);
 window.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
 

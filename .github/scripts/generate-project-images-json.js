@@ -23,7 +23,6 @@ projects.forEach(project => {
   const folderPath = path.join(projectImagesRoot, folder);
   if (!fs.existsSync(folderPath)) {
     console.warn(`⚠️ Folder not found: ${folderPath}`);
-    result[folder] = [];
     return;
   }
 
