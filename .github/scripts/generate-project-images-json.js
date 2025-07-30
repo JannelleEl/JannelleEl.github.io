@@ -15,7 +15,7 @@ projects.forEach(project => {
 	// Check if folder is defined
   const folder = project.images_folder;
 	if (!folder) {
-		console.warn(`⚠️ Folder not defined for ${project}`)
+		console.warn(`⚠️ Folder not defined for ${project.title}`)
 		return;
 	}
 
@@ -32,7 +32,7 @@ projects.forEach(project => {
   );
 
   // Create full relative paths for browser use
-  result[folder] = files.map(file => `assets/images/${folder}/${file}`);
+  result[folder] = files.map(file => `assets/images/projects/${folder}/${file}`);
 });
 
 fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
