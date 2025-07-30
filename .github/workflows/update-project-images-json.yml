@@ -27,6 +27,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/data/project-images.json
-          git commit -m "Auto-update project-images.json [GitHub Action]" || echo "No changes to commit"
+          git add assets/data/_project-images.json
+          git commit -m "Auto-update _project-images.json [GitHub Action]" || echo "No changes to commit"
           git push

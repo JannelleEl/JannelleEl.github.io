@@ -23,7 +23,7 @@ const container = document.getElementById('projectsContainer');
 // Load data from JSON
 Promise.all([
   fetch('assets/data/projects.json').then(res => res.json()),
-  fetch('assets/data/project-images.json').then(res => res.json())
+  fetch('assets/data/_project-images.json').then(res => res.json())
 ]).then(([projects, projectImages]) => {
 
   // Loop each project in JSON
