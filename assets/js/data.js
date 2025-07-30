@@ -14,7 +14,7 @@ const projects = [
     caption: "An intimate and breezy gathering space designed for rest and slow moments.",
     description: "An intimate and breezy gathering space designed for rest and slow moments. This proposed lanai blends natural textures, warm lighting, and lush greenery to create a seamless indoor-outdoor experience. With a modern tropical palette and wood-accented ceiling, it invites calm conversation, shaded lounging, and quiet reflection—an elegant escape tucked into the heart of Lincoln Heights.",
     images: [
-      "https://images.unsplash.com/photo-1633109667660-26327f6d1733?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "assets/images/projects/lanai/1.png",
       "https://images.unsplash.com/photo-1687763076556-86a76c94f06c?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1633109633238-e982d5b61f9f?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1633109870201-318921e3f992?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
