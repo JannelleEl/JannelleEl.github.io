@@ -1,0 +1,29 @@
+name: Update Project Images JSON
+
+on:
+  push:
+    branches: [main]  # Change if your default branch is different
+
+jobs:
+  generate-json:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Generate images.json
+      run: node .github/scripts/generate-project-images-json.js
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add assets/images.json
+        git commit -m "Update images.json [auto]" || echo "No changes to commit"
+        git push

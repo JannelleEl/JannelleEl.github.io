@@ -1,4 +1,4 @@
-// Render tools marquee
+// FEAT: Tools Marque
 const marquee = document.getElementById('tools-marquee');
 function renderLogos() {
   const logos = [...tools, ...tools]; // Duplicate for infinite scroll
@@ -16,28 +16,37 @@ renderLogos();
 marquee.addEventListener('mouseenter', () => marquee.style.animationPlayState = 'paused');
 marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
 
-// Render project cards
+
+// FEAT: Project Cards
 const container = document.getElementById('projectsContainer');
-projects.forEach((project) => {
-  const card = document.createElement('div');
-  card.className = "project-card bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer";
-  card.setAttribute('data-title', project.title);
-  card.setAttribute('data-description', project.description);
-  card.setAttribute('data-images', project.images.join(';'));
 
-  card.innerHTML = `
-    <img src="${project.images[0]}" alt="${project.title}" class="w-full h-48 object-cover" />
-    <div class="p-4">
-      <h4 class="text-xl font-semibold mb-2">${project.title}</h4>
-      <p class="text-gray-600 text-sm">${project.caption}</p>
-    </div>
-  `;
+// Load data from JSON
+Promise.all([
+  fetch('assets/data/projects.json').then(res => res.json()),
+  fetch('assets/data/project-images.json').then(res => res.json())
+]).then(([projects, projectImages]) => {
 
-  container.appendChild(card);
+  // Create card for each project data
+  projects.forEach(project => {
+    const card = document.createElement('div');
+    const folderImages = projectImages[project.images_folder] || [];
+    card.className = "project-card bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer";
+    card.setAttribute('data-title', project.title);
+    card.setAttribute('data-description', project.description);
+    card.setAttribute('data-images', folderImages.join(';'));
+    card.innerHTML = `
+      <img src="${folderImages[0]}" alt="${project.title}" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h4 class="text-xl font-semibold mb-2">${project.title}</h4>
+        <p class="text-gray-600 text-sm">${project.caption}</p>
+      </div>
+    `;
+    container.appendChild(card);
+  });
 });
 
 
-// Modal logic
+// FEAT: Project Modal
 const modal = document.getElementById('projectModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalImages = document.getElementById('modalImages');
