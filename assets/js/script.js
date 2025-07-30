@@ -26,16 +26,20 @@ Promise.all([
   fetch('assets/data/project-images.json').then(res => res.json())
 ]).then(([projects, projectImages]) => {
 
-  // Create card for each project data
+  // Loop each project in JSON
   projects.forEach(project => {
+    const folder = project.images_folder;
+    const folderImages = folder && projectImages[folder] ? projectImages[folder] : [];
+    const thumbnail = folderImages[0] || 'assets/images/image-slash.svg';
+
+    // Create project card
     const card = document.createElement('div');
-    const folderImages = projectImages[project.images_folder] || [];
     card.className = "project-card bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer";
     card.setAttribute('data-title', project.title);
     card.setAttribute('data-description', project.description);
     card.setAttribute('data-images', folderImages.join(';'));
     card.innerHTML = `
-      <img src="${folderImages[0]}" alt="${project.title}" class="w-full h-48 object-cover" />
+      <img src="${thumbnail}" alt="${project.title}" class="w-full h-48 object-cover" />
       <div class="p-4">
         <h4 class="text-xl font-semibold mb-2">${project.title}</h4>
         <p class="text-gray-600 text-sm">${project.caption}</p>
