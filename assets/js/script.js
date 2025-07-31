@@ -1,20 +1,30 @@
-// FEAT: Tools Marque
-const marquee = document.getElementById('tools-marquee');
-function renderLogos() {
-  const logos = [...tools, ...tools]; // Duplicate for infinite scroll
-  logos.forEach(tool => {
-    const img = document.createElement('img');
-    img.src = tool.src;
-    img.alt = tool.alt;
-    img.className = 'h-16 mr-16 object-contain';
-    marquee.appendChild(img);
-  });
+// FEAT: Tools Marquee
+async function renderToolsMarquee() {
+  const marquee = document.getElementById('tools-marquee');
+  
+  try {
+    // Load data from JSON
+    const response = await fetch('assets/data/tools.json');
+    const tools = await response.json();
+    const images = [...tools, ...tools]; // Duplicate for infinite scroll
+    
+    // Create tool image
+    images.forEach(tool => {
+      const img = document.createElement('img');
+      img.src = tool.src;
+      img.alt = tool.alt;
+      img.className = 'h-16 mr-16 object-contain';
+      marquee.appendChild(img);
+    });
+  } catch (error) {
+    console.error('Failed to load tools.json:', error);
+  }
+  
+  // Pause on hover
+  marquee.addEventListener('mouseenter', () => marquee.style.animationPlayState = 'paused');
+  marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
 }
-renderLogos();
-
-// Pause on hover
-marquee.addEventListener('mouseenter', () => marquee.style.animationPlayState = 'paused');
-marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
+renderToolsMarquee();
 
 
 // FEAT: Project Cards
