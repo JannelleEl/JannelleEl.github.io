@@ -4,7 +4,7 @@ const path = require('path');
 // Define paths
 const projectsPath = path.join(__dirname, '../../assets/data/projects.json');
 const projectImagesRoot = path.join(__dirname, '../../assets/images/projects');
-const outputPath = path.join(__dirname, '../../assets/data/_project-images.json');
+const outputPath = path.join(__dirname, '../../assets/data/auto-project-images.json');
 
 const result = {};
 
@@ -35,4 +35,4 @@ projects.forEach(project => {
 });
 
 fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
-console.log(`✅ Generated _project-images.json with ${Object.keys(result).length} folders`);
+console.log(`✅ Generated auto-project-images.json with ${Object.keys(result).length} folders`);
