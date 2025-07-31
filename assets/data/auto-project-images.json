@@ -1,6 +1,25 @@
 {
-  "lanai-lincoln": [
-    "assets/images/projects/lanai-lincoln/1.png",
-    "assets/images/projects/lanai-lincoln/2.png"
+  "lanai": [
+    "assets/images/projects/lanai/1.png",
+    "assets/images/projects/lanai/2.png",
+    "assets/images/projects/lanai/3.png",
+    "assets/images/projects/lanai/4.png",
+    "assets/images/projects/lanai/5.png",
+    "assets/images/projects/lanai/6.png",
+    "assets/images/projects/lanai/7.png"
+  ],
+  "bedroom": [
+    "assets/images/projects/bedroom/1.png",
+    "assets/images/projects/bedroom/2.png",
+    "assets/images/projects/bedroom/3.png",
+    "assets/images/projects/bedroom/4.png",
+    "assets/images/projects/bedroom/5.png"
+  ],
+  "auditorium": [
+    "assets/images/projects/auditorium/1.png",
+    "assets/images/projects/auditorium/2.png",
+    "assets/images/projects/auditorium/3.png",
+    "assets/images/projects/auditorium/4.png",
+    "assets/images/projects/auditorium/5.png"
   ]
 }
